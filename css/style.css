@@ -196,6 +196,56 @@ textarea {
   .option-grid.two { grid-template-columns: repeat(2, 1fr); }
   .actions { grid-template-columns: 1fr 1fr; }
 }
+
+@media (min-width: 1024px) {
+  .container { max-width: 1280px; }
+  .form-shell { max-width: 1280px; }
+  #aspirasi-form {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    align-items: start;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  #aspirasi-form > #step-one,
+  #aspirasi-form > #step-two {
+    display: block;
+  }
+  #aspirasi-form > #step-one {
+    grid-column: 1 / 7;
+  }
+  #aspirasi-form > #step-two {
+    grid-column: 7 / -1;
+  }
+  #step-one fieldset,
+  #step-two fieldset {
+    height: auto;
+  }
+  #step-one .actions,
+  #step-two .actions {
+    padding: 12px;
+  }
+  .panels { grid-template-columns: repeat(4, 1fr); }
+  .summary-row { grid-template-columns: 220px 1fr; }
+}
+
+@media (max-width: 719px) {
+  .site-header { height: 56px; padding: 0 12px; }
+  .brand-text { max-width: 170px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .container { padding: 20px 12px 48px; }
+  .display { font-size: clamp(44px, 17vw, 72px); }
+  .hero { min-height: 390px; }
+  .section-heading { align-items: flex-start; }
+  .section-heading h2 { font-size: 26px; }
+  .option-grid.two { grid-template-columns: 1fr; }
+  .actions { grid-template-columns: 1fr; }
+  .summary-row { grid-template-columns: 1fr; gap: 4px; }
+  .btn { width: 100%; }
+  fieldset { padding: 12px; }
+  .ticker-track { font-size: 9px; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .ticker-track { animation: none; }

@@ -85,6 +85,24 @@ function initFormPage() {
   const stepTwo = document.getElementById('step-two');
   const progressFill = document.getElementById('progress-fill');
   const progressText = document.getElementById('progress-text');
+  const desktopLayout = window.matchMedia('(min-width: 1024px)');
+
+  const applyDesktopLayout = () => {
+    if (desktopLayout.matches) {
+      stepOne.hidden = false;
+      stepTwo.hidden = false;
+      progressFill.style.width = '100%';
+      progressText.textContent = 'LANGKAH 01/02 & 02/02';
+      return;
+    }
+
+    stepOne.hidden = false;
+    stepTwo.hidden = true;
+    progressFill.style.width = '50%';
+    progressText.textContent = 'LANGKAH 01/02';
+  };
+  applyDesktopLayout();
+  desktopLayout.addEventListener('change', applyDesktopLayout);
 
   ['pernah_keluhan', 'disampaikan_ke', 'ditanggapi', 'tahu_alur', 'kategori'].forEach(name => {
     const input = form.querySelector(`input[name="${name}"][value="${CSS.escape(draft[name] || '')}"]`);
@@ -109,6 +127,12 @@ function initFormPage() {
     const error = validateStepOne(draft);
     if (error) return showError(error);
     writeDraft(draft);
+
+    if (desktopLayout.matches) {
+      stepTwo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
     stepOne.hidden = true;
     stepTwo.hidden = false;
     progressFill.style.width = '100%';
@@ -120,6 +144,12 @@ function initFormPage() {
     hideError();
     draft = { ...draft, ...collectStepTwo() };
     writeDraft(draft);
+
+    if (desktopLayout.matches) {
+      stepOne.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      return;
+    }
+
     stepTwo.hidden = true;
     stepOne.hidden = false;
     progressFill.style.width = '50%';
