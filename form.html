@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kirim Aspirasi - Suara Kita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Beranda Suara Kita"><span class="brand-mark">SK</span><span class="brand-text">Kirim Aspirasi</span></a>
+  </header>
+
+  <main class="container form-shell">
+    <p class="eyebrow">Formulir aspirasi // 2 langkah</p>
+    <h1 class="section-heading" style="margin-top: 8px"><span>Suara Anda</span></h1>
+
+    <div class="progress" aria-label="Kemajuan pengisian">
+      <div class="progress-meta"><span id="progress-text">LANGKAH 01/02</span><span>ASPIRASI MAHASISWA</span></div>
+      <div class="progress-bar"><div class="progress-fill" id="progress-fill"></div></div>
+    </div>
+
+    <div class="error" id="form-error" hidden role="alert"></div>
+
+    <form id="aspirasi-form" novalidate>
+      <section id="step-one" class="step">
+        <fieldset>
+          <legend>1. Pernahkah kamu memiliki keluhan tentang pelayanan atau fasilitas kampus?</legend>
+          <div class="option-grid two">
+            <div class="option-card"><input id="keluhan-ya" type="radio" name="pernah_keluhan" value="Ya"><label for="keluhan-ya">Ya</label></div>
+            <div class="option-card"><input id="keluhan-tidak" type="radio" name="pernah_keluhan" value="Tidak"><label for="keluhan-tidak">Tidak</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>2. Ke mana keluhan disampaikan?</legend>
+          <div class="option-grid two">
+            <div class="option-card"><input id="saluran-advomiba" type="radio" name="disampaikan_ke" value="Advomiba"><label for="saluran-advomiba">Advomiba</label></div>
+            <div class="option-card"><input id="saluran-hmps" type="radio" name="disampaikan_ke" value="HMPS"><label for="saluran-hmps">HMPS</label></div>
+            <div class="option-card"><input id="saluran-pa" type="radio" name="disampaikan_ke" value="Dosen PA"><label for="saluran-pa">Dosen PA</label></div>
+            <div class="option-card"><input id="saluran-grup" type="radio" name="disampaikan_ke" value="Grup angkatan"><label for="saluran-grup">Grup angkatan</label></div>
+            <div class="option-card"><input id="saluran-belum" type="radio" name="disampaikan_ke" value="Tidak disampaikan"><label for="saluran-belum">Tidak disampaikan</label></div>
+            <div class="option-card"><input id="saluran-lain" type="radio" name="disampaikan_ke" value="Lainnya"><label for="saluran-lain">Lainnya</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>3. Apakah keluhan mendapat tanggapan?</legend>
+          <div class="option-grid two">
+            <div class="option-card"><input id="tanggapan-ya" type="radio" name="ditanggapi" value="Ya"><label for="tanggapan-ya">Ya</label></div>
+            <div class="option-card"><input id="tanggapan-belum" type="radio" name="ditanggapi" value="Belum"><label for="tanggapan-belum">Belum</label></div>
+            <div class="option-card"><input id="tanggapan-tahu" type="radio" name="ditanggapi" value="Tidak tahu"><label for="tanggapan-tahu">Tidak tahu</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>4. Apakah kamu memahami alur aspirasi?</legend>
+          <div class="option-grid two">
+            <div class="option-card"><input id="alur-tahu" type="radio" name="tahu_alur" value="Tahu"><label for="alur-tahu">Tahu</label></div>
+            <div class="option-card"><input id="alur-sedikit" type="radio" name="tahu_alur" value="Sedikit"><label for="alur-sedikit">Sedikit</label></div>
+            <div class="option-card"><input id="alur-tidak" type="radio" name="tahu_alur" value="Tidak tahu"><label for="alur-tidak">Tidak tahu</label></div>
+          </div>
+        </fieldset>
+
+        <div class="actions"><button class="btn" id="to-step-two" type="button">Lanjut ke langkah 2</button></div>
+      </section>
+
+      <section id="step-two" class="step" hidden>
+        <fieldset>
+          <legend>5. Kategori aspirasi</legend>
+          <div class="option-grid two">
+            <div class="option-card"><input id="kategori-akademik" type="radio" name="kategori" value="Akademik"><label for="kategori-akademik">Akademik</label></div>
+            <div class="option-card"><input id="kategori-fasilitas" type="radio" name="kategori" value="Fasilitas"><label for="kategori-fasilitas">Fasilitas</label></div>
+            <div class="option-card"><input id="kategori-administrasi" type="radio" name="kategori" value="Layanan administrasi"><label for="kategori-administrasi">Layanan administrasi</label></div>
+            <div class="option-card"><input id="kategori-lain" type="radio" name="kategori" value="Lainnya"><label for="kategori-lain">Lainnya</label></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>6. Uraian aspirasi</legend>
+          <p class="helper">Tulis kejadian dan sarannya; jangan menyebut nama orang.</p>
+          <div class="field">
+            <label for="aspirasi">Aspirasi wajib</label>
+            <textarea id="aspirasi" name="aspirasi" maxlength="500" required placeholder="Tuliskan aspirasi secara lugas dan berdasarkan kejadian yang dialami."></textarea>
+            <div class="field-meta"><span>Minimal 10 karakter</span><span id="aspirasi-count">0/500</span></div>
+          </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>7. Usulan saran</legend>
+          <div class="field">
+            <label for="saran">Saran opsional</label>
+            <textarea id="saran" name="saran" maxlength="300" rows="4" placeholder="Tuliskan usulan perbaikan yang konstruktif."></textarea>
+            <div class="field-meta"><span>Opsional</span><span id="saran-count">0/300</span></div>
+          </div>
+        </fieldset>
+
+        <div class="honeypot" aria-hidden="true">
+          <label for="website">Jangan isi kolom ini</label>
+          <input id="website" name="website" type="text" tabindex="-1" autocomplete="off">
+        </div>
+
+        <div class="actions">
+          <button class="btn secondary" id="to-step-one" type="button">Kembali ke langkah 1</button>
+          <button class="btn" id="to-confirmation" type="button">Tinjau konfirmasi</button>
+        </div>
+      </section>
+    </form>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>

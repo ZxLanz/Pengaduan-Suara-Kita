@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konfirmasi Aspirasi - Suara Kita</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="index.html" aria-label="Beranda Suara Kita"><span class="brand-mark">SK</span><span class="brand-text">Konfirmasi</span></a>
+  </header>
+
+  <main class="container form-shell">
+    <p class="eyebrow">Tinjau sebelum mengirim</p>
+    <h1 class="section-heading" style="margin-top: 8px"><span>Ringkasan aspirasi</span></h1>
+
+    <div class="error" id="form-error" hidden role="alert"></div>
+    <section class="summary" id="aspirasi-summary" aria-label="Ringkasan aspirasi"></section>
+
+    <label class="pact" for="pact">
+      <input id="pact" type="checkbox">
+      <span>Saya menyampaikan aspirasi ini dengan jujur dan santun, tanpa menyebut nama individu.</span>
+    </label>
+
+    <div class="error status" id="submit-status" hidden role="status"></div>
+
+    <div class="actions">
+      <button class="btn secondary" type="button" onclick="window.location.href='form.html'">Ubah aspirasi</button>
+      <button class="btn" id="submit-aspirasi" type="button">Kirim aspirasi</button>
+    </div>
+  </main>
+  <script src="js/config.js"></script>
+  <script src="js/form.js"></script>
+</body>
+</html>
