@@ -29,12 +29,16 @@ function getRadioValue(name) {
   return selected ? selected.value : '';
 }
 
+function scrollBehavior() {
+  return window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'auto' : 'smooth';
+}
+
 function showError(message) {
   const box = document.getElementById('form-error');
   if (!box) return;
   box.textContent = `[GAGAL] ${message}`;
   box.hidden = false;
-  box.scrollIntoView({ behavior: 'smooth', block: 'center' });
+  box.scrollIntoView({ behavior: scrollBehavior(), block: 'center' });
 }
 
 function hideError() {
@@ -117,8 +121,20 @@ function initFormPage() {
     document.getElementById('aspirasi-count').textContent = `${aspirasi.value.length}/500`;
     document.getElementById('saran-count').textContent = `${saran.value.length}/300`;
   };
-  document.getElementById('aspirasi').addEventListener('input', updateCounters);
-  document.getElementById('saran').addEventListener('input', updateCounters);
+  const persistDraft = () => {
+    draft = { ...draft, ...collectStepOne(), ...collectStepTwo() };
+    writeDraft(draft);
+  };
+
+  document.getElementById('aspirasi').addEventListener('input', () => {
+    updateCounters();
+    persistDraft();
+  });
+  document.getElementById('saran').addEventListener('input', () => {
+    updateCounters();
+    persistDraft();
+  });
+  form.addEventListener('change', persistDraft);
   updateCounters();
 
   document.getElementById('to-step-two').addEventListener('click', () => {
@@ -129,7 +145,7 @@ function initFormPage() {
     writeDraft(draft);
 
     if (desktopLayout.matches) {
-      stepTwo.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      stepTwo.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
       return;
     }
 
@@ -137,7 +153,7 @@ function initFormPage() {
     stepTwo.hidden = false;
     progressFill.style.width = '100%';
     progressText.textContent = 'LANGKAH 02/02';
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: scrollBehavior() });
   });
 
   document.getElementById('to-step-one').addEventListener('click', () => {
@@ -146,7 +162,7 @@ function initFormPage() {
     writeDraft(draft);
 
     if (desktopLayout.matches) {
-      stepOne.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      stepOne.scrollIntoView({ behavior: scrollBehavior(), block: 'start' });
       return;
     }
 
@@ -159,6 +175,16 @@ function initFormPage() {
   document.getElementById('to-confirmation').addEventListener('click', () => {
     hideError();
     draft = { ...draft, ...collectStepOne(), ...collectStepTwo() };
+    const stepOneError = validateStepOne(draft);
+    if (stepOneError) {
+      if (!desktopLayout.matches) {
+        stepOne.hidden = false;
+        stepTwo.hidden = true;
+        progressFill.style.width = '50%';
+        progressText.textContent = 'LANGKAH 01/02';
+      }
+      return showError(stepOneError);
+    }
     const error = validateStepTwo(draft);
     if (error) return showError(error);
     writeDraft(draft);

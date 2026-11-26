@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+  <title id="title">Forum musyawarah mahasiswa</title>
+  <desc id="desc">Ilustrasi garis monokrom empat orang berkumpul di sekitar meja dengan gelembung bicara.</desc>
+  <defs>
+    <pattern id="dots" width="16" height="16" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="3" r="1.4" fill="#ffffff" opacity="0.16"/>
+    </pattern>
+    <pattern id="grid" width="80" height="80" patternUnits="userSpaceOnUse">
+      <path d="M80 0H0V80" fill="none" stroke="#ffffff" stroke-opacity="0.06"/>
+    </pattern>
+  </defs>
+  <rect width="1200" height="800" fill="#0e0e0e"/>
+  <rect width="1200" height="800" fill="url(#grid)"/>
+  <circle cx="600" cy="410" r="330" fill="none" stroke="#ffffff" stroke-opacity="0.16"/>
+  <circle cx="600" cy="410" r="270" fill="none" stroke="#ffffff" stroke-opacity="0.08" stroke-dasharray="5 12"/>
+  <path d="M0 650L1200 220V800H0Z" fill="url(#dots)" opacity="0.8"/>
+  <g fill="none" stroke="#ffffff" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter">
+    <ellipse cx="600" cy="565" rx="255" ry="94"/>
+    <ellipse cx="600" cy="565" rx="210" ry="64" stroke-opacity="0.35"/>
+    <path d="M345 565L310 665M855 565L890 665M600 659V730"/>
+    <circle cx="600" cy="215" r="52"/>
+    <path d="M488 405C488 315 512 278 600 278C688 278 712 315 712 405"/>
+    <circle cx="230" cy="390" r="48"/>
+    <path d="M110 565C110 485 138 448 230 448C322 448 350 485 350 565"/>
+    <circle cx="970" cy="390" r="48"/>
+    <path d="M850 565C850 485 878 448 970 448C1062 448 1090 485 1090 565"/>
+    <path d="M485 205H410L375 165V105H560V165L525 205"/>
+    <path d="M715 195H790L825 155V105H640V155L675 195"/>
+  </g>
+  <g stroke="#ffffff" stroke-width="5" stroke-linecap="square">
+    <path d="M420 130H520M420 153H500"/>
+    <path d="M680 130H780M700 153H780"/>
+    <path d="M555 385H645M555 420H645M555 455H620"/>
+  </g>
+  <g fill="#ffffff">
+    <rect x="112" y="604" width="236" height="8"/>
+    <rect x="852" y="604" width="236" height="8"/>
+    <rect x="508" y="700" width="184" height="8"/>
+    <circle cx="600" cy="565" r="12"/>
+  </g>
+  <g fill="#ffffff" opacity="0.22">
+    <circle cx="90" cy="90" r="5"/><circle cx="1110" cy="710" r="5"/><circle cx="1050" cy="120" r="3"/><circle cx="150" cy="720" r="3"/>
+  </g>
+</svg>

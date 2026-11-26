@@ -3,29 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Aspirasi telah terkirim dan siap ditinjau.">
   <title>Aspirasi Terkirim - Suara Kita</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#konten">Lewati ke pesan terima kasih</a>
+
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Beranda Suara Kita"><span class="brand-mark">SK</span><span class="brand-text">Kelompok 5</span></a>
+    <div class="ticker" aria-label="Agenda kegiatan">
+      <div class="ticker-track">
+        <div class="ticker-group"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+        <div class="ticker-group" aria-hidden="true"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+      </div>
+    </div>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Beranda Suara Kita">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">Suara Kita // Musyawarah Kita</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html">Beranda</a>
+        <a href="form.html">Formulir Aspirasi</a>
+        <a href="info.html">Alur Musyawarah</a>
+      </nav>
+      <span class="header-code">Arsip aspirasi // 2026</span>
+    </div>
   </header>
 
-  <main class="container form-shell">
-    <p class="eyebrow">[SUKSES]</p>
-    <h1 class="display" style="font-size: clamp(44px, 12vw, 84px)">Aspirasi Terkirim</h1>
-    <div class="panel">
-      <p>Terima kasih telah menyampaikan aspirasi. Aspirasi akan ditinjau sebagai bahan musyawarah Kelompok 5 Pancasila.</p>
-      <p>Rekomendasi direncanakan disampaikan melalui Advomiba.</p>
+  <main class="page form-shell" id="konten">
+    <div class="confirmation-intro">
+      <div>
+        <p class="page-kicker">Konfirmasi penerimaan // Musyawarah mahasiswa</p>
+        <h1>Suara telah tersampaikan</h1>
+      </div>
+      <p class="intro-note">Terima kasih telah menyampaikan pengalaman dan usulan secara jujur serta santun.</p>
     </div>
-    <div class="actions">
-      <a class="btn" href="index.html">Kembali ke beranda</a>
-      <a class="btn secondary" href="info.html">Lihat alur musyawarah</a>
+
+    <div class="success-layout">
+      <section class="success-panel" aria-labelledby="success-title">
+        <span class="success-stamp">[SUKSES]</span>
+        <h2 class="display-small" id="success-title">Aspirasi terkirim</h2>
+        <p>Aspirasi akan ditinjau sebagai bahan musyawarah Kelompok 5 Pancasila. Rekomendasi direncanakan disampaikan melalui Advomiba.</p>
+        <div class="receipt" aria-label="Ringkasan status">
+          <div class="receipt-row"><span>Status</span><strong>Diterima untuk ditinjau</strong></div>
+          <div class="receipt-row"><span>Tahap berikutnya</span><strong>Musyawarah 6-7 Desember</strong></div>
+          <div class="receipt-row"><span>Data identitas</span><strong>Tidak diminta</strong></div>
+        </div>
+      </section>
+
+      <aside class="next-panel" aria-labelledby="next-title">
+        <p class="panel-label">Agenda konsensus // Desember 2026</p>
+        <h2 class="panel-title" id="next-title">Apa yang terjadi selanjutnya?</h2>
+        <ol class="process-list">
+          <li class="stage">
+            <span class="stage-index">01</span>
+            <div><h3>Pengumpulan</h3><p>Aspirasi masuk melalui formulir.</p></div>
+            <span class="stage-date">3-5 Des</span>
+          </li>
+          <li class="stage active">
+            <span class="stage-index">02</span>
+            <div><h3>Musyawarah</h3><p>Pengalaman dan usulan dibahas bersama.</p></div>
+            <span class="stage-date">6-7 Des</span>
+          </li>
+          <li class="stage">
+            <span class="stage-index">03</span>
+            <div><h3>Rekomendasi</h3><p>Hasil pembahasan dirangkum.</p></div>
+            <span class="stage-date">8-12 Des</span>
+          </li>
+          <li class="stage">
+            <span class="stage-index">04</span>
+            <div><h3>Presentasi</h3><p>Hasil pekerjaan disampaikan.</p></div>
+            <span class="stage-date">15 Des</span>
+          </li>
+        </ol>
+        <div class="form-actions">
+          <a class="btn" href="info.html">Lihat alur lengkap</a>
+          <a class="btn secondary" href="index.html">Kembali ke beranda</a>
+        </div>
+      </aside>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Suara Kita, Musyawarah Kita</p>
+        <p class="footer-copy">Terima kasih telah menjadi bagian dari musyawarah yang santun dan bertanggung jawab.</p>
+      </div>
+      <p class="footer-code">Kelompok 5 Pancasila // 1INFD // Informatika // 2026</p>
+    </div>
+  </footer>
 </body>
 </html>

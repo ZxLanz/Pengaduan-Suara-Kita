@@ -3,80 +3,134 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Saluran aspirasi mahasiswa 1INFD untuk tugas UAS Pancasila Kelompok 5.">
   <title>Suara Kita, Musyawarah Kita</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Beranda Suara Kita">
-      <span class="brand-mark">SK</span>
-      <span class="brand-text">Kelompok 5</span>
-    </a>
-    <a class="btn secondary" href="form.html">Kirim Aspirasi</a>
+    <div class="ticker" aria-label="Agenda kegiatan">
+      <div class="ticker-track">
+        <div class="ticker-group"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+        <div class="ticker-group" aria-hidden="true"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+      </div>
+    </div>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Beranda Suara Kita">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">Suara Kita // Musyawarah Kita</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html" aria-current="page">Beranda</a>
+        <a href="form.html">Formulir Aspirasi</a>
+        <a href="info.html">Alur Musyawarah</a>
+      </nav>
+      <span class="header-code">1INFD // 2026</span>
+    </div>
   </header>
 
-  <div class="ticker" aria-label="Agenda kegiatan">
-    <div class="ticker-track">
-      3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA
-      &nbsp;&nbsp;&nbsp;//&nbsp;&nbsp;&nbsp;
-      3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA
-    </div>
-  </div>
-
-  <main class="container">
-    <p class="eyebrow">Tugas UAS Pancasila // Kelas 1INFD // 2026</p>
-    <h1 class="display">Suara Kita <span>Musyawarah Kita</span></h1>
-    <p class="lead">Saluran aspirasi mahasiswa Informatika 1INFD untuk menyampaikan pengalaman, kebutuhan, dan usulan secara jujur serta santun. Kami tidak meminta nama, NIM, atau email.</p>
-
-    <section class="hero" aria-label="Tugas pengumpulan aspirasi">
-      <div class="hero-copy">
-        <p class="eyebrow">Kampanye Kelompok 5 Pancasila</p>
-        <h2 class="section-heading" style="margin: 8px 0 16px"><span>Sampaikan pengalamanmu</span></h2>
-        <a class="btn" href="form.html">Sampaikan aspirasi</a>
+  <main class="page" id="konten">
+    <section class="masthead" aria-labelledby="hero-title">
+      <p class="page-kicker">Klausul utama // Manifesto deliberasi</p>
+      <h1 class="display" id="hero-title">Suara Kita,<span>Musya<wbr>warah <wbr>Kita.</span></h1>
+      <div class="masthead-bottom">
+        <p class="lead">Setiap pengalaman mahasiswa layak didengar. Sampaikan keluhan, kebutuhan, dan usulan secara jujur serta santun sebagai bahan musyawarah Kelompok 5 Pancasila.</p>
+        <p class="masthead-code">Tugas UAS Pancasila // 1INFD // Desember 2026</p>
       </div>
     </section>
 
-    <div class="section-heading">
-      <h2>Empat gagasan utama</h2>
-      <span class="eyebrow">Sila ke-4</span>
+    <section class="hero-grid" aria-label="Manifesto dan saluran aspirasi">
+      <div class="hero-main">
+        <div>
+          <p class="page-kicker">Musyawarah // Sila ke-4 Pancasila</p>
+          <p class="hero-statement">Pengalaman mahasiswa adalah bahan pertimbangan. Sampaikan dengan objektif, hormati perbedaan, dan jaga etika musyawarah.</p>
+        </div>
+        <div>
+          <div class="hero-actions">
+            <a class="btn" href="form.html">Sampaikan aspirasi</a>
+            <a class="btn secondary" href="info.html">Pelajari alur</a>
+          </div>
+          <div class="hero-meta" aria-label="Identitas kegiatan">
+            <div><span>Kelompok</span><strong>05 // Pancasila</strong></div>
+            <div><span>Kelas</span><strong>1INFD // Informatika</strong></div>
+            <div><span>Periode</span><strong>Desember 2026</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <figure class="hero-archive">
+        <div class="archive-image">
+          <img src="assets/suara.svg" alt="Ilustrasi forum musyawarah mahasiswa di sekitar meja">
+        </div>
+        <span class="archive-tag">Arsip independen // Bagian 01</span>
+        <figcaption class="archive-copy">
+          <strong>Suara tanpa identitas yang diminta</strong>
+          <p>Formulir tidak meminta nama, NIM, atau email. Jangan menulis identitas orang lain dalam isi aspirasi.</p>
+        </figcaption>
+      </figure>
+    </section>
+
+    <div class="section-header">
+      <h2>Empat doktrin konsensus</h2>
+      <p>Pengalaman dicatat, dibahas bersama, lalu dirangkum menjadi rekomendasi yang beretika.</p>
     </div>
 
-    <section class="panels" aria-label="Gagasan utama">
-      <article class="panel">
-        <span class="panel-index">[01 // SUARA]</span>
-        <h3>Kenapa suara penting</h3>
-        <p>Pengalaman mahasiswa dapat menjadi dasar pertimbangan yang lebih jelas bagi kegiatan akademik dan fasilitas.</p>
+    <section class="doctrine-grid" aria-label="Empat gagasan utama">
+      <article class="doctrine">
+        <div class="doctrine-index"><strong>[01 // PREMIS]</strong><span>SEC.01</span></div>
+        <h3>Mengangkat yang terpendam</h3>
+        <p>Keresahan tentang pelayanan, akademik, dan fasilitas perlu disampaikan dengan lugas agar dapat dipertimbangkan bersama.</p>
+        <span class="doc-id">DOK. ID // DTR-01-PRM</span>
       </article>
-      <article class="panel">
-        <span class="panel-index">[02 // PRIVASI]</span>
+      <article class="doctrine">
+        <div class="doctrine-index"><strong>[02 // PROTOKOL]</strong><span>SEC.02</span></div>
         <h3>Data identitas tidak diminta</h3>
-        <p>Formulir ini tidak meminta nama, NIM, atau email. Jangan menulis identitas orang lain dalam isi aspirasi.</p>
+        <p>Kami tidak meminta nama, NIM, atau email. Tuliskan permasalahan dan usulan tanpa menyebut nama individu.</p>
+        <span class="doc-id">DOK. ID // DTR-02-ETK</span>
       </article>
-      <article class="panel">
-        <span class="panel-index">[03 // MUSYAWARAH]</span>
-        <h3>Dibahas bersama</h3>
+      <article class="doctrine">
+        <div class="doctrine-index"><strong>[03 // DELIBERASI]</strong><span>SEC.03</span></div>
+        <h3>Musyawarah mufakat</h3>
         <p>Pendapat disusun melalui musyawarah dan permusyawaratan yang berlandaskan Sila ke-4 Pancasila.</p>
+        <span class="doc-id">DOK. ID // DTR-03-MSY</span>
       </article>
-      <article class="panel">
-        <span class="panel-index">[04 // REKOMENDASI]</span>
-        <h3>Jadi rekomendasi</h3>
+      <article class="doctrine">
+        <div class="doctrine-index"><strong>[04 // RESOLUSI]</strong><span>SEC.04</span></div>
+        <h3>Menjadi rekomendasi</h3>
         <p>Aspirasi dapat dirangkum menjadi rekomendasi yang direncanakan disampaikan melalui Advomiba.</p>
+        <span class="doc-id">DOK. ID // DTR-04-RKM</span>
       </article>
     </section>
 
-    <div class="actions">
-      <a class="btn" href="form.html">Sampaikan aspirasi</a>
-      <a class="btn secondary" href="info.html">Pelajari alur</a>
-    </div>
+    <section class="home-log" aria-label="Informasi pengolahan aspirasi">
+      <div class="log-copy">
+        <p class="page-kicker">Korespondensi musyawarah // Catatan proses</p>
+        <h2>Dari pengalaman menjadi bahan pertimbangan</h2>
+        <p>Aspirasi dikumpulkan pada 3-5 Desember, dibahas pada 6-7 Desember, dirangkum menjadi rekomendasi pada 8-12 Desember, dan dipresentasikan pada 15 Desember.</p>
+      </div>
+      <div class="log-cta">
+        <p>Tugas UAS Pancasila<br>Kelompok 5 // 1INFD // 2026</p>
+        <a class="btn" href="info.html">Buka dokumen alur</a>
+      </div>
+    </section>
   </main>
 
-  <footer class="footer">
-    Kelompok 5 Pancasila // 1INFD // Informatika // UIN Prof. K.H. Saifuddin Zuhri Purwokerto // Dosen Eko Ahmad Riyanto, S.Pd., M.Sc.
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Suara Kita, Musyawarah Kita</p>
+        <p class="footer-copy">Kelompok 5 Pancasila // 1INFD // Informatika // UIN Prof. K.H. Saifuddin Zuhri Purwokerto // Dosen Eko Ahmad Riyanto, S.Pd., M.Sc.</p>
+      </div>
+      <p class="footer-code">Tahun 2026 // Bahasa Indonesia // Musyawarah dan etika santun</p>
+    </div>
   </footer>
+
   <script src="js/motion.js"></script>
 </body>
 </html>

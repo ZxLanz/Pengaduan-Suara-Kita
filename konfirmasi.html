@@ -3,37 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#000000">
+  <meta name="description" content="Tinjau dan konfirmasi aspirasi sebelum dikirim.">
   <title>Konfirmasi Aspirasi - Suara Kita</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;700&family=Space+Mono:wght@400;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+  <a class="skip-link" href="#konten">Lewati ke konfirmasi</a>
+
   <header class="site-header">
-    <a class="brand" href="index.html" aria-label="Beranda Suara Kita"><span class="brand-mark">SK</span><span class="brand-text">Konfirmasi</span></a>
+    <div class="ticker" aria-label="Agenda kegiatan">
+      <div class="ticker-track">
+        <div class="ticker-group"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+        <div class="ticker-group" aria-hidden="true"><span>3-5 DES PENGUMPULAN ASPIRASI // 6-7 DES MUSYAWARAH // 8-12 DES REKOMENDASI // 15 DES PRESENTASI // KELOMPOK 5 PANCASILA</span></div>
+      </div>
+    </div>
+    <div class="nav-shell">
+      <a class="brand" href="index.html" aria-label="Beranda Suara Kita">
+        <span class="brand-mark">SK</span>
+        <span class="brand-text">Suara Kita // Musyawarah Kita</span>
+      </a>
+      <nav class="site-nav" aria-label="Navigasi utama">
+        <a href="index.html">Beranda</a>
+        <a href="form.html" aria-current="page">Formulir Aspirasi</a>
+        <a href="info.html">Alur Musyawarah</a>
+      </nav>
+      <span class="header-code">Validasi akhir // 1INFD</span>
+    </div>
   </header>
 
-  <main class="container form-shell">
-    <p class="eyebrow">Tinjau sebelum mengirim</p>
-    <h1 class="section-heading" style="margin-top: 8px"><span>Ringkasan aspirasi</span></h1>
+  <main class="page form-shell" id="konten">
+    <div class="confirmation-intro">
+      <div>
+        <p class="page-kicker">Koridor validasi // Lembar kerja resmi mahasiswa</p>
+        <h1>Tinjau &amp; validasi suara</h1>
+      </div>
+      <p class="intro-note">Periksa kembali isi aspirasi, lalu setujui pakta etika sebelum mengirim.</p>
+    </div>
 
     <div class="error" id="form-error" hidden role="alert"></div>
-    <section class="summary" id="aspirasi-summary" aria-label="Ringkasan aspirasi"></section>
 
-    <label class="pact" for="pact">
-      <input id="pact" type="checkbox">
-      <span>Saya menyampaikan aspirasi ini dengan jujur dan santun, tanpa menyebut nama individu.</span>
-    </label>
+    <div class="confirmation-layout">
+      <section class="dossier-panel" aria-labelledby="dossier-title">
+        <p class="panel-label">Dossier aspirasi // Ringkasan jawaban</p>
+        <h2 class="panel-title" id="dossier-title">Verbatim usulan mahasiswa</h2>
+        <div class="summary" id="aspirasi-summary" aria-label="Ringkasan aspirasi"></div>
 
-    <div class="error status" id="submit-status" hidden role="status"></div>
+        <label class="pact" for="pact">
+          <input id="pact" type="checkbox">
+          <span>
+            <strong>Pakta etika musyawarah // Sila ke-4</strong>
+            Saya menyampaikan aspirasi ini dengan jujur dan santun, tanpa menyebut nama individu.
+          </span>
+        </label>
 
-    <div class="actions">
-      <button class="btn secondary" type="button" onclick="window.location.href='form.html'">Ubah aspirasi</button>
-      <button class="btn" id="submit-aspirasi" type="button">Kirim aspirasi</button>
+        <div class="error status" id="submit-status" hidden role="status"></div>
+
+        <div class="form-actions">
+          <a class="btn secondary" href="form.html">Ubah aspirasi</a>
+          <button class="btn" id="submit-aspirasi" type="button" disabled>Kirim aspirasi</button>
+        </div>
+      </section>
+
+      <aside class="process-panel" aria-labelledby="process-title">
+        <p class="panel-label">Alur konsensus // Kelompok 5</p>
+        <h2 class="panel-title" id="process-title">Empat tahap musyawarah</h2>
+        <ol class="process-list">
+          <li class="stage active">
+            <span class="stage-index">01</span>
+            <div><h3>Pengumpulan aspirasi</h3><p>Pengalaman dan usulan dikumpulkan melalui formulir.</p></div>
+            <span class="stage-date">3-5 Des</span>
+          </li>
+          <li class="stage">
+            <span class="stage-index">02</span>
+            <div><h3>Musyawarah</h3><p>Aspirasi ditinjau dan dibahas bersama.</p></div>
+            <span class="stage-date">6-7 Des</span>
+          </li>
+          <li class="stage">
+            <span class="stage-index">03</span>
+            <div><h3>Rekomendasi</h3><p>Hasil pembahasan dirangkum menjadi usulan perbaikan.</p></div>
+            <span class="stage-date">8-12 Des</span>
+          </li>
+          <li class="stage">
+            <span class="stage-index">04</span>
+            <div><h3>Presentasi</h3><p>Kelompok menyampaikan hasil pekerjaan.</p></div>
+            <span class="stage-date">15 Des</span>
+          </li>
+        </ol>
+        <div class="privacy-note"><strong>Catatan data</strong><br>Formulir tidak meminta nama, NIM, atau email. Jangan menulis identitas orang lain dalam isi aspirasi.</div>
+      </aside>
     </div>
   </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <div>
+        <p class="footer-brand">Suara Kita, Musyawarah Kita</p>
+        <p class="footer-copy">Konfirmasi terakhir // Aspirasi akan ditinjau sebagai bahan musyawarah Kelompok 5 Pancasila.</p>
+      </div>
+      <p class="footer-code">Rekomendasi direncanakan disampaikan melalui Advomiba // 2026</p>
+    </div>
+  </footer>
+
   <script src="js/config.js"></script>
   <script src="js/form.js"></script>
 </body>
