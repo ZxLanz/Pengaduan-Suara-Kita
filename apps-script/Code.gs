@@ -46,7 +46,7 @@ function doPost(e) {
   } catch (err) {
     return out({ ok: false, error: 'server' });
   } finally {
-    lock.releaseLock();
+    if (lock.hasLock()) lock.releaseLock();
   }
 }
 

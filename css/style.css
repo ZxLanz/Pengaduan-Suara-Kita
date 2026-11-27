@@ -89,6 +89,9 @@ img {
   top: 8px;
   left: 8px;
   z-index: 100;
+  min-height: 48px;
+  display: inline-flex;
+  align-items: center;
   padding: 10px 14px;
   background: var(--white);
   color: var(--black);
@@ -166,6 +169,7 @@ img {
   align-items: center;
   gap: 12px;
   min-width: max-content;
+  min-height: 48px;
   color: var(--white);
   text-decoration: none;
 }
@@ -193,7 +197,7 @@ img {
 }
 
 .site-nav a {
-  min-height: 36px;
+  min-height: 48px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -1401,7 +1405,7 @@ info-figure {
 
   .site-nav a {
     flex: 1 0 auto;
-    min-height: 40px;
+    min-height: 48px;
     padding: 8px 10px;
     font-size: 9px;
   }
@@ -1425,11 +1429,11 @@ info-figure {
   }
 
   .masthead .display {
-    font-size: clamp(42px, 12vw, 60px);
+    font-size: clamp(34px, 10vw, 60px);
   }
 
   .display {
-    font-size: clamp(42px, 12vw, 60px);
+    font-size: clamp(34px, 10vw, 60px);
     line-height: 0.88;
   }
 

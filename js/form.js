@@ -239,34 +239,31 @@ function initConfirmationPage() {
       return showError('URL Google Apps Script belum dikonfigurasi di js/config.js.');
     }
 
-    try {
-      const submitted = sessionStorage.getItem('suara-kita-submitted');
-      if (submitted === 'true') {
-        window.location.href = 'terima-kasih.html';
-        return;
-      }
-    } catch (error) {}
-
     submit.disabled = true;
     status.hidden = false;
     status.textContent = '[PROSES] Aspirasi sedang dikirim.';
+
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 15000);
 
     try {
       await fetch(APPS_SCRIPT_URL, {
         method: 'POST',
         mode: 'no-cors',
         headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(draft)
+        body: JSON.stringify(draft),
+        signal: controller.signal
       });
-      try {
-        sessionStorage.setItem('suara-kita-submitted', 'true');
-      } catch (error) {}
       clearDraft();
       status.textContent = '[SUKSES] Aspirasi telah dikirim.';
       window.location.href = 'terima-kasih.html';
     } catch (error) {
-      status.textContent = '[GAGAL] Belum terkirim, coba lagi.';
+      status.textContent = error.name === 'AbortError'
+        ? '[GAGAL] Koneksi terlalu lama, coba lagi.'
+        : '[GAGAL] Belum terkirim, coba lagi.';
       submit.disabled = false;
+    } finally {
+      clearTimeout(timeout);
     }
   });
 }
