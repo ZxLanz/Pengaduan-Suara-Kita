@@ -1,5 +1,33 @@
 const SHEET_NAME = 'Sheet1';
 
+const HEADERS = [
+  'Waktu',
+  'Pernah memiliki keluhan',
+  'Disampaikan ke',
+  'Ditanggapi',
+  'Memahami alur',
+  'Kategori',
+  'Aspirasi',
+  'Saran'
+];
+
+function setupSheet() {
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  spreadsheet.rename('Aspirasi Suara Kita Musyawarah Kita');
+  const sheet = spreadsheet.getSheetByName(SHEET_NAME) || spreadsheet.insertSheet(SHEET_NAME);
+  spreadsheet.setSpreadsheetTimeZone('Asia/Jakarta');
+  sheet.getRange(1, 1, 1, HEADERS.length).setValues([HEADERS]).setFontWeight('bold');
+  sheet.setFrozenRows(1);
+  sheet.setColumnWidth(1, 155);
+  sheet.setColumnWidth(2, 190);
+  sheet.setColumnWidth(3, 170);
+  sheet.setColumnWidth(4, 140);
+  sheet.setColumnWidth(5, 170);
+  sheet.setColumnWidth(6, 180);
+  sheet.setColumnWidth(7, 500);
+  sheet.setColumnWidth(8, 400);
+}
+
 const OPSI = {
   pernah_keluhan: ['Ya', 'Tidak'],
   disampaikan_ke: ['Advomiba', 'HMPS', 'Dosen PA', 'Grup angkatan', 'Tidak disampaikan', 'Lainnya'],
